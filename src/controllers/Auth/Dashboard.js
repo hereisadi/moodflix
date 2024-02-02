@@ -17,8 +17,7 @@ const dashboard = async (req, res) => {
       }
       const { name, email, phone, age, gender } = user;
       // get all searchs made by the user
-      const searches = SearchModel.find({ email: user.email });
-
+      const searches = await SearchModel.find({ email: user.email });
       return res.status(200).json({
         name,
         email,

@@ -17,7 +17,7 @@ const searchsMade = async (req, res) => {
         return res.status(404).json({ error: "User not found" });
       }
 
-      const seatrchForLoggedInUser = await SearchModel.find({
+      const seatrchForLoggedInUser = await SearchModel.findOne({
         email: user.email,
       });
 
