@@ -15,7 +15,7 @@ const botResponse = async (req, res) => {
       }
 
       const response = await openai.chat.completions.create({
-        engine: "text-davinci-003",
+        model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: text }],
         // prompt: text,
         max_tokens: 64,
