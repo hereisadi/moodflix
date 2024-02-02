@@ -25,6 +25,7 @@ const searchsMade = async (req, res) => {
         return res.status(404).json({ error: "Not found" });
       }
 
+      console.log(seatrchForLoggedInUser);
       let { text } = req.body;
       text = text?.trim().toString();
       if (!text) {
@@ -42,7 +43,7 @@ const searchsMade = async (req, res) => {
         feelingResponse,
       };
 
-      seatrchForLoggedInUser.searchs.push(search);
+      seatrchForLoggedInUser?.searchs?.push(search);
       await seatrchForLoggedInUser.save();
       return res.status(200).json({ message: "search done", search });
     } catch (e) {

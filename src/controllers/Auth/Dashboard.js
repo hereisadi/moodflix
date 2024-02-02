@@ -15,12 +15,16 @@ const dashboard = async (req, res) => {
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
-
+      const { name, email, phone, age, gender } = user;
       // get all searchs made by the user
       const searches = SearchModel.find({ email: user.email });
 
       return res.status(200).json({
-        user,
+        name,
+        email,
+        age,
+        gender,
+        phone,
         searches,
       });
     } catch (e) {

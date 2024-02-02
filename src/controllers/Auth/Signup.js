@@ -14,7 +14,7 @@ const signup = async (req, res) => {
       name = name?.trim().toString();
       email = email?.toLowerCase().trim().toString();
       password = password?.trim().toString();
-      age = age?.trim().toString();
+      age = age?.toString().trim();
       gender = gender?.trim().toString();
       phone = phone?.trim().toString();
 
