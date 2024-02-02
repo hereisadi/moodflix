@@ -38,6 +38,9 @@ dependencies:
   nodemon:
     specifier: ^3.0.1
     version: 3.0.3
+  sentiment:
+    specifier: ^5.0.2
+    version: 5.0.2
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -2669,6 +2672,11 @@ packages:
       statuses: 2.0.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /sentiment@5.0.2:
+    resolution: {integrity: sha512-ZeC3y0JsOYTdwujt5uOd7ILJNilbgFzUtg/LEG4wUv43LayFNLZ28ec8+Su+h3saHlJmIwYxBzfDHHZuiMA15g==}
+    engines: {node: '>=8.0'}
     dev: false
 
   /serve-static@1.15.0:
