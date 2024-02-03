@@ -67,8 +67,6 @@ def get_name():
     return {'Welcome fastapi'}
 
 @appp.post('/feeling_predictionc')
-
-
 def predict_emotion(input_text):
 
     cleaned_text = clean_text(input_text)
@@ -81,4 +79,4 @@ def predict_emotion(input_text):
 
     return predicted_emotion,label
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(appp, host='127.0.0.1', port=8000)
