@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.homeFragment">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="135dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/frame" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_height="113dp"
+        android:background="@drawable/random_shape"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:elevation="1000dp"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quote of the day"
+        android:fontFamily="@font/manrope_extrabold"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Happiness is not by chance but by choice. — Jim Rohn"
+            android:fontFamily="@font/manrope"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="-50dp"
+        android:id="@+id/imageView3"
+        android:scaleType="centerCrop"
+        android:layout_width="280dp"
+        android:layout_height="273dp"
+        android:src="@drawable/group123" />
+
+    <EditText
+        android:layout_marginTop="-50dp"
+        android:id="@+id/editTextText4"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:ems="10"
+        android:paddingTop="10dp"
+        android:gravity="start"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edit_text"
+        android:inputType="text"
+        android:hint="How are you feeling?"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+</LinearLayout>
