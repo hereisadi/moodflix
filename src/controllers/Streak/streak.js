@@ -2,7 +2,8 @@ const { verifyToken } = require("../../middlewares/VerifyToken");
 const { SearchModel } = require("../../models/Search");
 const { SignUpModel } = require("../../models/User");
 // const moment = require("moment");
-
+// implemented
+//
 const getStreaks = async (req, res) => {
   verifyToken(req, res, async () => {
     try {
