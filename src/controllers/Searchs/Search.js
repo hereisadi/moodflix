@@ -45,6 +45,30 @@ const searchsMade = async (req, res) => {
         tasksList.push("task3");
         tasksList.push("task4");
         tasksList.push("task5");
+      } else if (feelingResponse === "sad") {
+        tasksList.push("task1");
+        tasksList.push("task2");
+        tasksList.push("task3");
+        tasksList.push("task4");
+        tasksList.push("task5");
+      } else if (feelingResponse === "angry") {
+        tasksList.push("task1");
+        tasksList.push("task2");
+        tasksList.push("task3");
+        tasksList.push("task4");
+        tasksList.push("task5");
+      } else if (feelingResponse === "anxious") {
+        tasksList.push("task1");
+        tasksList.push("task2");
+        tasksList.push("task3");
+        tasksList.push("task4");
+        tasksList.push("task5");
+      } else if (feelingResponse === "more") {
+        tasksList.push("task1");
+        tasksList.push("task2");
+        tasksList.push("task3");
+        tasksList.push("task4");
+        tasksList.push("task5");
       }
 
       const task1 = tasksList[0];
