@@ -20,7 +20,7 @@ const getStreaks = async (req, res) => {
       const particularSearch = await SearchModel.findOne({ email: user.email });
       const array = particularSearch?.searchs;
 
-      // sort the array in descending order
+      // sort the array in descending order // not necessary as of now
 
       if (!array || array.length === 0) {
         return res.status(200).json({ streak: 0 });

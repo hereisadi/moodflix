@@ -15,20 +15,20 @@ const botResponse = async (req, res) => {
       }
 
       const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: text }],
+        model: "gpt-3.5-turbo",
         // prompt: text,
-        max_tokens: 64,
+        max_tokens: 100,
         // temperature: 0,
         // top_p: 1.0,
         // frequency_penalty: 0.0,
         // presence_penalty: 0.0,
         // stop: ["\n"],
       });
-      console.log(response.choices[0].message);
+      console.log(response.choices[0].message.content);
       return res.status(200).json({
         message: "bot response",
-        response: response.data.choices[0].message,
+        response: response.choices[0].message.content,
       });
     } catch (err) {
       console.error(err);

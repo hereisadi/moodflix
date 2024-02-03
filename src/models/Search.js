@@ -10,6 +10,18 @@ const searchSchema = new mongoose.Schema({
       textSerched: String,
       time: String,
       feelingResponse: String,
+      tasks: [
+        {
+          uniqueID: String,
+          taskName: String,
+          isCompleted: {
+            type: Boolean,
+          },
+          time: {
+            type: String,
+          },
+        },
+      ],
     },
   ],
 });
