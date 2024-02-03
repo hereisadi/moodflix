@@ -3,7 +3,7 @@ from pydantic import BaseModel
 # import data
 import pickle
 import json
-# import uvicorn
+import uvicorn
 import numpy as np
 from starlette.middleware.cors import CORSMiddleware
 # import streamlit as st
@@ -40,9 +40,9 @@ nltk.download('stopwords')
 stopwords = set(nltk.corpus.stopwords.words('english'))
 
 
-lg = pickle.load(open('/home/wildfire/moodflix/fastapi/MODEL.pkl','rb'))
-tfidf_vectorizer = pickle.load(open('/home/wildfire/moodflix/fastapi/vectorizer.pkl','rb'))
-lb = pickle.load(open('/home/wildfire/moodflix/fastapi/label_encoder.pkl','rb'))
+lg = pickle.load(open('/MODEL.pkl','rb'))
+tfidf_vectorizer = pickle.load(open('/vectorizer.pkl','rb'))
+lb = pickle.load(open('/label_encoder.pkl','rb'))
 
 
 def clean_text(text):
@@ -53,6 +53,17 @@ def clean_text(text):
     text = [stemmer.stem(word) for word in text if word not in stopwords]
     return " ".join(text)
 
+
+
+# sentence = 'I love her so much'
+
+# emotion , what = predict_emotion(sentence)
+# print(f"{emotion} : {what}\n\n")
+
+
+
+
+@appp.post('/feeling_prediction')
 def predict_emotion(input_text):
     cleaned_text = clean_text(input_text)
     input_vectorized = tfidf_vectorizer.transform([cleaned_text])
@@ -63,31 +74,5 @@ def predict_emotion(input_text):
     label =  np.max(lg.predict(input_vectorized))
 
     return predicted_emotion,label
-
-sentence = 'I love her so much'
-
-emotion , what = predict_emotion(sentence)
-print(f"{emotion} : {what}\n\n")
-
-
-
-
-# @appp.post('/feeling_prediction')
-
-
-
-# def feeling_pred(input_parameters: model_input):
-
-#     # input_data = input_parameters.json()
-#     # input_dictionary = json.loads(input_data)
-#     input_data = input_data.text()
-    
-#     print(input_data)
-
-#     prediction = feeling_model.predict(np.array([input_data]))
-
-#     return {
-#         prediction
-#     }
-# if __name__ == '__main__':
-#     uvicorn.run(appp, host='127.0.0.1', port=8000)
+if __name__ == '__main__':
+    uvicorn.run(appp, host='127.0.0.1', port=8000)
