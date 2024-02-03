@@ -1,31 +1,49 @@
-# 1. Library imports
-import uvicorn
 from fastapi import FastAPI
-from input import feeling
-import h5py
+from pydantic import BaseModel
+# import data
+import pickle
+import json
+import uvicorn
 import numpy as np
+from starlette.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+appp = FastAPI()
 
-with h5py.File("model.h5", "r") as file:
+origins = ["https://moodflix-7jvz.onrender.com/"]
 
-    model = file['model_key'][:]
+appp.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=['*']
+)
 
 
-@app.get('/')
-def index():
-    return {'message': 'Hello, World'}
+class model_input(BaseModel):
+    feeling: str
 
 
-@app.post('/predict')
-def predict_feeling(data: feeling):
-    input_text = data.text
+# loading the saved model
+# just need to input ml model file here
+feeling_model = pickle.load(open('model.h5', 'rb'))
 
-    prediction = model.predict(np.array([input_text]))
+
+@appp.post('/feeling_prediction')
+def feeling_pred(input_parameters: model_input):
+
+    # input_data = input_parameters.json()
+    # input_dictionary = json.loads(input_data)
+    input_data = input_data.text()
+    
+    print(input_data)
+
+    prediction = feeling_model.predict(np.array([input_data]))
 
     return {
-        'prediction': prediction.tolist()
+        prediction
     }
 
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(appp, host='127.0.0.1', port=8000)
