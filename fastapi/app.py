@@ -40,9 +40,9 @@ nltk.download('stopwords')
 stopwords = set(nltk.corpus.stopwords.words('english'))
 
 
-lg = pickle.load(open('/MODEL.pkl','rb'))
-tfidf_vectorizer = pickle.load(open('/vectorizer.pkl','rb'))
-lb = pickle.load(open('/label_encoder.pkl','rb'))
+lg = pickle.load(open('/home/wildfire/moodflix/fastapi/MODEL.pkl','rb'))
+tfidf_vectorizer = pickle.load(open('/home/wildfire/moodflix/fastapi/vectorizer.pkl','rb'))
+lb = pickle.load(open('/home/wildfire/moodflix/fastapi/label_encoder.pkl','rb'))
 
 
 def clean_text(text):
@@ -62,9 +62,15 @@ def clean_text(text):
 
 
 
+@appp.get('/')
+def get_name():
+    return {'Welcome fastapi'}
 
-@appp.post('/feeling_prediction')
+@appp.post('/feeling_predictionc')
+
+
 def predict_emotion(input_text):
+
     cleaned_text = clean_text(input_text)
     input_vectorized = tfidf_vectorizer.transform([cleaned_text])
 
@@ -75,4 +81,4 @@ def predict_emotion(input_text):
 
     return predicted_emotion,label
 if __name__ == '__main__':
-    uvicorn.run(appp, host='127.0.0.1', port=8000)
+    uvicorn.run(app, host='127.0.0.1', port=8000)
