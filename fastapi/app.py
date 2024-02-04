@@ -33,9 +33,6 @@ appp.add_middleware(
 class model_input(BaseModel):
     feeling: str
 
-
-
-
 nltk.download('stopwords')
 stopwords = set(nltk.corpus.stopwords.words('english'))
 
@@ -53,25 +50,16 @@ def clean_text(text):
     text = [stemmer.stem(word) for word in text if word not in stopwords]
     return " ".join(text)
 
-
-
-# sentence = 'I love her so much'
-
-# emotion , what = predict_emotion(sentence)
-# print(f"{emotion} : {what}\n\n")
-
-
-
 @appp.get('/')
 def get_name():
     return {'Welcome fastapi'}
 
-@appp.post('/feeling_predictionc')
+@appp.post('/feeling_prediction')
 
 
-def predict_emotion(input_text):
-
-    cleaned_text = clean_text(input_text)
+def predict_emotion(input_text:model_input):
+  
+    cleaned_text = clean_text(input_text.feeling)
     input_vectorized = tfidf_vectorizer.transform([cleaned_text])
 
     # Predict emotion
@@ -79,6 +67,12 @@ def predict_emotion(input_text):
     predicted_emotion = lb.inverse_transform([predicted_label])[0]
     label =  np.max(lg.predict(input_vectorized))
 
-    return predicted_emotion,label
+    return predicted_emotion
+
+sentence = 'I smoked a fat pound of grass and fall on my ass like a fat woman sat down too fast'
+
+# emotion , what = predict_emotion(sentence)
+# print(f"prediction : {emotion} : {what}\n\n")
+
 if __name__ == '__main__':
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run(appp, host='127.0.0.1', port=8000)
