@@ -37,5 +37,27 @@
         android:id="@+id/tasks2"
         android:name="com.example.myapplication.fragments.tasks2"
         android:label="fragment_tasks2"
-        tools:layout="@layout/fragment_tasks2" />
+        tools:layout="@layout/fragment_tasks2" >
+        <action
+            android:id="@+id/action_tasks2_to_taskno12"
+            app:destination="@id/taskno12" />
+    </fragment>
+    <fragment
+        android:id="@+id/all_tasks_over2"
+        android:name="com.example.myapplication.fragments.all_tasks_over"
+        android:label="fragment_all_tasks_over"
+        tools:layout="@layout/fragment_all_tasks_over" >
+        <action
+            android:id="@+id/action_all_tasks_over2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskno12"
+        android:name="com.example.myapplication.fragments.taskno1"
+        android:label="fragment_taskno1"
+        tools:layout="@layout/fragment_taskno1" >
+        <action
+            android:id="@+id/action_taskno12_to_all_tasks_over2"
+            app:destination="@id/all_tasks_over2" />
+    </fragment>
 </navigation>

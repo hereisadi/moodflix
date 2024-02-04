@@ -5,9 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentTaskno1Binding
+
 class taskno1 : Fragment() {
 
+    private val binding : FragmentTaskno1Binding by lazy {
+        FragmentTaskno1Binding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -16,8 +22,11 @@ class taskno1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding.next.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_taskno12_to_all_tasks_over2)
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_taskno1, container, false)
+        return binding.root
     }
 
 }

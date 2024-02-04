@@ -42,7 +42,7 @@
         android:src="@drawable/group_1652" />
 
     <Button
-        android:id="@+id/button_signup"
+        android:id="@+id/next"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:backgroundTint="#FFCB67"

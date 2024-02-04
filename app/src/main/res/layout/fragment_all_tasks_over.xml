@@ -39,7 +39,8 @@
         android:layout_height="506dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:src="@drawable/group_1652" />
+        android:src="@drawable/group_1657"
+ />
 
     <Button
         android:id="@+id/button_signup"
@@ -47,10 +48,10 @@
         android:layout_height="50dp"
         android:backgroundTint="#FFCB67"
         android:fontFamily="@font/manrope_bold"
-        android:text="Next"
+        android:text="Done"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:layout_marginTop="-80dp"
+        android:layout_marginTop="-150dp"
         android:textSize="20sp" />
 
 </LinearLayout>
