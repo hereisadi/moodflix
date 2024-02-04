@@ -31,7 +31,7 @@ appp.add_middleware(
 
 
 class model_input(BaseModel):
-    feeling: str
+    sentence: str
 
 
 
@@ -67,9 +67,9 @@ def get_name():
     return {'Welcome fastapi'}
 
 @appp.post('/feeling_predictionc')
-def predict_emotion(input_text):
+def predict_emotion(input_text:model_input):
 
-    cleaned_text = clean_text(input_text)
+    cleaned_text = clean_text(input_text.sentence)
     input_vectorized = tfidf_vectorizer.transform([cleaned_text])
 
     # Predict emotion
@@ -77,6 +77,6 @@ def predict_emotion(input_text):
     predicted_emotion = lb.inverse_transform([predicted_label])[0]
     label =  np.max(lg.predict(input_vectorized))
 
-    return predicted_emotion,label
+    return predicted_emotion
 if __name__ == '__main__':
-    uvicorn.run(appp, host='127.0.0.1', port=8000)
+    uvicorn.run(appp, host='127.0.0.1', port=8080)
