@@ -6,13 +6,14 @@
     tools:context=".fragments.profileFragment"
     android:layout_height="match_parent" >
 <LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="310dp"
         android:orientation="vertical"
         android:background="@drawable/profilebg"
         >
@@ -49,6 +50,318 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/white"
             android:layout_gravity="center_horizontal"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vectormsg"/>
+    <TextView
+        android:layout_marginStart="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="xyz@gmail.com"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:src="@drawable/phone"/>
+            <TextView
+                android:layout_marginStart="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="9876543210"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
     </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_edit_24"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="-30dp"
+        android:foregroundGravity="center"
+        android:paddingBottom="15dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Achievements"
+        android:fontFamily="@font/manrope_extrabold"
+        android:textSize="24sp"
+        android:layout_marginTop="5dp"
+        android:textColor="#545454"
+        android:layout_gravity="center_horizontal"/>
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginEnd="10dp"
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="120dp"
+        />
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="7dp"
+        android:src="@drawable/rvneeche"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Mood Stats"
+        android:fontFamily="@font/manrope_extrabold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+            
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#E836B6"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Joy"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#A8CBBD"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Fear"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#FF6767"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Anger"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginEnd="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#FFCB67"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Fear"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+<!--        Joy-->
+<!--        Anger-->
+<!--        Fear-->
+<!--        Sadness-->
+<!--        Love-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#85AAFF"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="Sadness"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_height="300dp"
+            android:foregroundGravity="left"
+            android:scaleType="fitStart"
+            android:src="@drawable/bar_chart" />
+    </HorizontalScrollView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yearly Mood Stats"
+        android:fontFamily="@font/manrope_extrabold"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#5B85E0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="2023"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:layout_gravity="center_vertical"
+                android:src="#78CFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:text="2024"
+                android:textColor="#888888"
+                android:textSize="9dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="541dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="300dp"
+            android:foregroundGravity="left"
+            android:scaleType="fitStart"
+            android:src="@drawable/bar_chart__1_" />
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="301dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#EE5B85E0"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Log out"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        app:cornerRadius="11dp"
+        android:layout_marginBottom="30dp"
+        />
+
 </LinearLayout>
 </ScrollView>

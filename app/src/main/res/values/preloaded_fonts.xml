@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/inter</item>
         <item>@font/manrope</item>
         <item>@font/manrope_bold</item>
         <item>@font/manrope_extrabold</item>
         <item>@font/roboto</item>
+        <item>@font/roboto_medium</item>
     </array>
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="176dp"
+    android:layout_marginStart="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/profile_wla_page"
+    android:layout_height="116dp">
+<ImageView
+    android:layout_width="16dp"
+    android:layout_height="19dp"
+    android:src="@drawable/prize"
+    android:layout_gravity="end"
+    android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/achievement_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some task accomplished over the week - some quotes related."
+        android:textAlignment="center"
+        android:textSize="14dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="12dp"
+        />
+</LinearLayout>

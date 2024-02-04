@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -53,6 +57,8 @@
 
     </LinearLayout>
 
+
+
     <ImageView
         android:layout_gravity="center"
         android:layout_marginTop="-50dp"
@@ -62,20 +68,92 @@
         android:layout_height="273dp"
         android:src="@drawable/group123" />
 
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_marginTop="-210dp"
+        android:id="@+id/q"
+        android:scaleType="centerCrop"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/question_hspweyznuv" />
+
     <EditText
-        android:layout_marginTop="-50dp"
-        android:id="@+id/editTextText4"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ur_feeling"
         android:layout_width="match_parent"
-        android:layout_height="124dp"
-        android:ems="10"
+        android:layout_height="224dp"
+        android:inputType="textMultiLine"
         android:paddingTop="10dp"
         android:gravity="start"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/edit_text"
-        android:inputType="text"
         android:hint="How are you feeling?"
         android:paddingStart="10dp"
+        android:maxLines="7"
+        android:scrollbars="vertical"
         android:paddingEnd="10dp"
         />
+
+    <ImageButton
+        android:id="@+id/search_feeling"
+        android:layout_width="37dp"
+        android:layout_height="30dp"
+        android:src="@drawable/searchbtn"
+        android:layout_marginTop="-35dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="45dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="119dp"
+            android:backgroundTint="@color/white"
+            android:layout_height="68dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/input_text"/>
+        <ImageButton
+            android:layout_width="119dp"
+            android:layout_height="68dp"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/sad"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="-10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_width="119dp"
+            android:layout_height="68dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/angry"/>
+        <ImageButton
+            android:layout_width="119dp"
+            android:layout_height="68dp"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/fear"/>
+
+    </LinearLayout>
+
+    <ImageButton
+
+        android:layout_gravity="center"
+        android:layout_width="119dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="-10dp"
+        android:scaleType="centerCrop"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/love"/>
 </LinearLayout>
+</ScrollView>
