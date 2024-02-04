@@ -4,7 +4,7 @@ const { SearchModel } = require("../../models/Search");
 // const { SignUpModel } = require("../../models/User");
 const moment = require("moment-timezone");
 const { v4: uuidv4 } = require("uuid");
-const axios = require("axios");
+// const axios = require("axios");
 
 const searchsMade = async (req, res) => {
   // verifyToken(req, res, async () => {
@@ -38,13 +38,13 @@ const searchsMade = async (req, res) => {
     if (!text) {
       return res.status(400).json({ error: "payload missing" });
     }
-    const fastApiUrl = "http://127.0.0.1:8000/feeling_predictionc";
-    let feelingResponse = "";
-    await axios.post(fastApiUrl, { sentence: text }).then((res) => {
-      feelingResponse = res.data;
-    });
+    // const fastApiUrl = "http://127.0.0.1:8000/feeling_predictionc";
+    // let feelingResponse = "";
+    // await axios.post(fastApiUrl, { sentence: text }).then((res) => {
+    //   feelingResponse = res.data;
+    // });
     const currentTime = moment.tz("Asia/Kolkata").format("DD-MM-YY h:mma");
-    // const feelingResponse = "happy";
+    const feelingResponse = "happy";
     // use the model to find the feeling and update the same
     const tasksList = [];
     if (feelingResponse === "happy") {
